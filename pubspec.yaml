@@ -1,6 +1,6 @@
 name: const_math
 description: A package providing compile time math functions, not optimized for run time calculation.
-version: 1.0.1
+version: 1.0.2
 repository: https://github.com/kirara-shiroyoru/const_math
 
 environment:
