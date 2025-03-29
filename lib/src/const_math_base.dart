@@ -293,9 +293,6 @@ extension type const ConstMath._(double _value) implements double {
     double c8=0.0, double c9=0.0, double c10=0.0, double multiplier=1.0,
     String assertText=defaultAssertText, double shift=0.0,
     TransformEnum transformEnum=transformNone,
-    bool negate=false,
-    bool assertFailed=false,
-    bool reciprocal=false,
   }):this._transform((((((((((c10*d+c9)*d+c8)*d+c7)*d+c6)*d+c5)*d+c4)*d+c3)*d+c2)*d+c1)*d+c0,
       multiplier,transformEnum,shift,assertText);
 
