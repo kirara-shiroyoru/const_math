@@ -11,7 +11,10 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/to/develop-packages). 
 -->
 
-This package includes several math functions that returns double and can be used as compile-time constant.
+This package includes several "`const`able math functions" that can be called at compile-time which `dart:math` mostly cannot, returning `const double`, and can be used as compile-time constant. 
+
+They are `const` constructors of extension type on `double` implements `double`, therefore can be used just like normal double, with almost 0 cost.
+
 It is not and will not be optimized for run-time, if need a run time calculation, condider using 'dart:math' or other libraries.
 
 ## Features
@@ -83,7 +86,7 @@ In `pubspec.yaml`, add
 
 ```yaml
 dependencies:
-  const_math: ^1.0.0
+  const_math: ^1.0.2
 ```
 
 and run the pub get. In the place you wish to use these functions, 
