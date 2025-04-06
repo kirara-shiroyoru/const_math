@@ -7,7 +7,7 @@ library;
 import 'constants.dart';
 
 ///Should only be constructed const for efficiency.
-///An instance of this class should always be treated and use as double, not as extension type ConstMath. 
+///An instance of this class should always be treated and use as double, not as extension type ConstMath.
 extension type const ConstMath._(double _value) implements double {
   //----------------------------------------------------------------------------
   //  public api goes here, these are actual functions that users can invoke
@@ -561,7 +561,7 @@ extension type const ConstMath._(double _value) implements double {
   ///atan2 calculating algorithm
   const ConstMath._atan2Base(double d, double shift, double multiplier, TransformEnum transformEnum, String assertText)
     : //this._pade(d, a0: 4.25772129E-17, a1: 4.86816205E-17, a2: 1.25756219E-17, a3: 4.02179944E-19, b0: 4.25772129E-17, b1: 6.28740248E-17, b2: 2.50182216E-17, b3: 2.24872633E-18, shift: shift, transformEnum: transformEnum, assertText: assertText, multiplier: multiplier);
-      this._atan2Map1(1+d*d/2, 1+d*d, d, multiplier, shift, transformEnum, assertText);
+      this._atan2Map1(1 + d * d / 2, 1 + d * d, d, multiplier, shift, transformEnum, assertText);
 
   const ConstMath._atan2Map1(double d, double origin, double x, double multiplier, double shift, TransformEnum transformEnum, String assertText) : this._atan2Iter1((d + origin / d) / 2, origin, x, multiplier, shift, transformEnum, assertText);
   const ConstMath._atan2Iter1(double d, double origin, double x, double multiplier, double shift, TransformEnum transformEnum, String assertText) : this._atan2Iter2((d + origin / d) / 2, origin, x, multiplier, shift, transformEnum, assertText);
