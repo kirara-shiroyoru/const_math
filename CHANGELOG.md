@@ -1,3 +1,6 @@
+## 1.0.3
+ - Improve accuracy of `ConstMath.atan()` and `ConstMath.atan2()`
+
 ## 1.0.2
 
 - Remove three deprecated named parameters in private constructor `ConstMath._polynomial()`.
