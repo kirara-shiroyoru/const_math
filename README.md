@@ -11,11 +11,12 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/to/develop-packages). 
 -->
 
-This package includes several "`const`able math functions" that can be called at compile-time which `dart:math` mostly cannot, returning `const double`, and can be used as compile-time constant. 
+This package includes several "`const`able math functions" that can be called at compile-time which `dart:math` mostly cannot, returning `const double`, and can be used as compile-time constants. 
 
 They are `const` constructors of extension type on `double` implements `double`, therefore can be used just like normal double, with almost 0 cost.
 
-It is not and will not be optimized for run-time, if need a run time calculation, condider using 'dart:math' or other libraries.
+> [!NOTE]
+> This package is not and will not be optimized for runtime, if runtime optimization is needed for calculations, then consider using 'dart:math' or other libraries.
 
 ## Features
 
@@ -34,6 +35,7 @@ Basic functions
  - ConstMath.radToDeg(num d)
 
 Trigonometric functions
+
  - ConstMath.sin(num d)
  - ConstMath.cos(num d) 
  - ConstMath.tan(num d)
@@ -66,7 +68,7 @@ Root functions
  - ConstMath.rt5(num d)
  - ConstMath.rt7(num d)
 
-Hyperbolic trigonometric funcions
+Hyperbolic trigonometric functions
 
  - ConstMath.sinh(num d)
  - ConstMath.cosh(num d)
@@ -89,7 +91,7 @@ dependencies:
   const_math: ^1.0.2
 ```
 
-and run the pub get. In the place you wish to use these functions, 
+and run pub get. Import the package with
 
 ```dart
 import 'package:const_math/const_math.dart';
@@ -97,19 +99,19 @@ import 'package:const_math/const_math.dart';
 
 ## Usage
 
-These are compile time math functions that dart math does not provide, implemented by extension type on `double`.
+ConstMath has compile-time math functions that `dart:math` does not provide, implemented by extension type on `double`.
 
 ```dart
 const mySinValue = ConstMath.sin(3);
 ```
-If you think the name of extension type `ConstMath` is too wordy, you can do something like this.
+If `ConstMath` feels too verbose, then you can do something like this:
 
 ```dart
 typedef CM = ConstMath;
 const seventhRoot2 = CM.rt7(2);
 ```
 
-These values can also be passed as argument to other const constructors, or to another ConstMath function. 
+These values can also be passed as argument to other const constructors, or inside another ConstMath function. 
 
 ```dart
 const sinOfSin1 = CM.sin(CM.sin(1));
@@ -117,5 +119,5 @@ const sinOfSin1 = CM.sin(CM.sin(1));
 
 ## Additional information
 
-If need support or to report bugs,
+If you need support or to report bugs,
 email: const_math_support@worldoverwrite.com
