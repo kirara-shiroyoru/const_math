@@ -18,9 +18,9 @@ include: package:lints/recommended.yaml
 formatter:
   page_width: 400
 
-# linter:
-#   rules:
-#     - camel_case_types
+linter:
+  rules:
+    camel_case_types: false
 
 # analyzer:
 #   exclude:
