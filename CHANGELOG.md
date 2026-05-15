@@ -1,4 +1,10 @@
+## 1.1.0
+
+ - Introduce `functions` library to allow function-like syntax.
+ - Reduce the lower bound of dart sdk to 3.3.0.
+
 ## 1.0.3
+
  - Improve accuracy of `ConstMath.atan()` and `ConstMath.atan2()`
 
 ## 1.0.2

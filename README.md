@@ -15,8 +15,9 @@ This package includes several "`const`able math functions" that can be called at
 
 They are `const` constructors of extension type on `double` implements `double`, therefore can be used just like normal double, with almost 0 cost.
 
-> [!NOTE]
-> This package is not and will not be optimized for runtime, if runtime optimization is needed for calculations, then consider using 'dart:math' or other libraries.
+The package is seperated into 2 libraries, for older `package:const_math/constmath.dart` retain extension type syntax, while newer `package:const_math/functions.dart` ignored the `camel_case_types` lint rule to provide function-like syntax.
+
+It is not and will not be optimized for run-time, if need a run time calculation, condider using 'dart:math' or other libraries.
 
 ## Features
 
@@ -88,7 +89,7 @@ In `pubspec.yaml`, add
 
 ```yaml
 dependencies:
-  const_math: ^1.0.2
+  const_math: ^1.1.0
 ```
 
 and run pub get. Import the package with
@@ -97,6 +98,14 @@ and run pub get. Import the package with
 import 'package:const_math/const_math.dart';
 ```
 
+Alternatively, if you prefer function-like syntax, you can add this:
+
+```dart
+import 'package:const_math/functions.dart';
+```
+
+This might conflict to `dart:math` library, add prefix if needed.
+
 ## Usage
 
 ConstMath has compile-time math functions that `dart:math` does not provide, implemented by extension type on `double`.
@@ -104,17 +113,11 @@ ConstMath has compile-time math functions that `dart:math` does not provide, imp
 ```dart
 const mySinValue = ConstMath.sin(3);
 ```
-If `ConstMath` feels too verbose, then you can do something like this:
+
+Alternatively for using `package:const_math/functions.dart` library, you can use syntax like this:
 
 ```dart
-typedef CM = ConstMath;
-const seventhRoot2 = CM.rt7(2);
-```
-
-These values can also be passed as argument to other const constructors, or inside another ConstMath function. 
-
-```dart
-const sinOfSin1 = CM.sin(CM.sin(1));
+const mySinValue = sin(3);
 ```
 
 ## Additional information

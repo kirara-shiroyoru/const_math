@@ -6,9 +6,12 @@ library;
 
 import 'constants.dart';
 
+part 'basics.dart';
+part 'functions.dart';
+
 ///Should only be constructed const for efficiency.
 ///An instance of this class should always be treated and use as double, not as extension type ConstMath.
-extension type const ConstMath._(double _value) implements double {
+extension type const ConstMath._(double _value) implements double, sin,cos,tan,cot,sec,csc,asin,acos,atan,atan2,log,log2,log10,exp,pow,sqrt,cbrt,rt5,rt7,sinh,cosh,tanh,coth,sech,csch,erf,erfc {
   //----------------------------------------------------------------------------
   //  public api goes here, these are actual functions that users can invoke
   //----------------------------------------------------------------------------
@@ -20,68 +23,22 @@ extension type const ConstMath._(double _value) implements double {
   const ConstMath.e() : _value = e1;
 
   ///Change degree to radian.
-  const ConstMath.degToRad(num d) : _value = d / 180 * pi1;
+  const factory ConstMath.degToRad(num d) = degToRad;
 
   ///Change radian to degree.
-  const ConstMath.radToDeg(num d) : _value = d / pi1 * 180;
+  const factory ConstMath.radToDeg(num d) = radToDeg;
 
   ///Return absolute value, always return double.
-  const ConstMath.abs(num d) : _value = d >= 0 ? d * 1.0 : -d * 1.0;
+  const factory ConstMath.abs(num d) = abs;
 
   ///Return signum(d), in double.
-  const ConstMath.sgn(num d)
-    : _value =
-          d > 0.0
-              ? 1.0
-              : d < 0.0
-              ? -1.0
-              : 0.0;
+  const factory ConstMath.sgn(num d) = sgn;
 
   ///Compare and return minimum value for up to 10 values, returns double.
-  const ConstMath.min(num a, num b, [num c = double.infinity, num d = double.infinity, num e = double.infinity, num f = double.infinity, num g = double.infinity, num h = double.infinity, num i = double.infinity, num j = double.infinity])
-    : _value =
-          (a <= b && a <= c && a <= d && a <= e && a <= f && a <= g && a <= h && a <= i && a <= j)
-              ? a * 1.0
-              : (b <= c && b <= d && b <= e && b <= f && b <= g && b <= h && b <= i && b <= j)
-              ? b * 1.0
-              : (c <= d && c <= e && c <= f && c <= g && c <= h && c <= i && c <= j)
-              ? c * 1.0
-              : (d <= e && d <= f && d <= g && d <= h && d <= i && d <= j)
-              ? d * 1.0
-              : (e <= f && e <= g && e <= h && e <= i && e <= j)
-              ? e * 1.0
-              : (f <= g && f <= h && f <= i && f <= j)
-              ? f * 1.0
-              : (g <= h && g <= i && g <= j)
-              ? g * 1.0
-              : (h <= i && h <= j)
-              ? h * 1.0
-              : (i <= j)
-              ? i * 1.0
-              : j * 1.0;
+  const factory ConstMath.min(num a, num b, [num c, num d, num e, num f, num g, num h, num i, num j]) = min;
 
   ///Compare and return maximum value for up to 10 values, returns double.
-  const ConstMath.max(num a, num b, [num c = double.negativeInfinity, num d = double.negativeInfinity, num e = double.negativeInfinity, num f = double.negativeInfinity, num g = double.negativeInfinity, num h = double.negativeInfinity, num i = double.negativeInfinity, num j = double.negativeInfinity])
-    : _value =
-          (a >= b && a >= c && a >= d && a >= e && a >= f && a >= g && a >= h && a >= i && a >= j)
-              ? a * 1.0
-              : (b >= c && b >= d && b >= e && b >= f && b >= g && b >= h && b >= i && b >= j)
-              ? b * 1.0
-              : (c >= d && c >= e && c >= f && c >= g && c >= h && c >= i && c >= j)
-              ? c * 1.0
-              : (d >= e && d >= f && d >= g && d >= h && d >= i && d >= j)
-              ? d * 1.0
-              : (e >= f && e >= g && e >= h && e >= i && e >= j)
-              ? e * 1.0
-              : (f >= g && f >= h && f >= i && f >= j)
-              ? f * 1.0
-              : (g >= h && g >= i && g >= j)
-              ? g * 1.0
-              : (h >= i && h >= j)
-              ? h * 1.0
-              : (i >= j)
-              ? i * 1.0
-              : j * 1.0;
+  const factory ConstMath.max(num a, num b, [num c, num d, num e, num f, num g, num h, num i, num j]) = max;
 
   ///Calculate sine value in radius.
   const ConstMath.sin(num d) : this._sin(d * 1.0);
